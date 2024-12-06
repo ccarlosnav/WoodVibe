@@ -8,7 +8,7 @@ if (!isset($_SESSION['id_usuario'])) {
     header("Location: index.php");
     exit;
 }
-
+$etiqueta="</td>";
 $id = $_SESSION['id_usuario'];
 $tipo_usuario = $_SESSION['tipo_usuario'];
 
@@ -54,14 +54,14 @@ try {
 
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             echo "<tr id='row_" . $row['id'] . "'>";
-            echo "<td>" . htmlspecialchars($row['id']) . "</td>";
-            echo "<td>" . htmlspecialchars($row['customer_id']) . "</td>";
-            echo "<td>$" . number_format($row['total_price'], 2) . "</td>";
-            echo "<td>" . htmlspecialchars($row['created']) . "</td>";
-            echo "<td>" . htmlspecialchars($row['modified']) . "</td>";
-            echo "<td>" . htmlspecialchars($row['status']) . "</td>";
-            echo "<td>" . htmlspecialchars($row['product_names']) . "</td>";
-            echo "<td>" . htmlspecialchars($row['quantities']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['id']) . $etiqueta;
+            echo "<td>" . htmlspecialchars($row['customer_id']) . $etiqueta;
+            echo "<td>$" . number_format($row['total_price'], 2) . $etiqueta;
+            echo "<td>" . htmlspecialchars($row['created']) . $etiqueta;
+            echo "<td>" . htmlspecialchars($row['modified']) . $etiqueta;
+            echo "<td>" . htmlspecialchars($row['status']) . $etiqueta;
+            echo "<td>" . htmlspecialchars($row['product_names']) . $etiqueta;
+            echo "<td>" . htmlspecialchars($row['quantities']) . $etiqueta;
             echo "</tr>";
         }
         echo "</tbody></table>";
