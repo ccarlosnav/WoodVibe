@@ -20,4 +20,3 @@ try {
 
 // Devolver la conexión PDO para que pueda ser utilizada en otros archivos
 return $db;
-?>
