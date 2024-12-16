@@ -148,7 +148,10 @@ try {
         <!-- Navbar-->
         <ul class="navbar-nav ml-auto ml-md-0">
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onKeyPress="" onKeyDown="" onKeyUp="">                    <i class="fas fa-user fa-fw"></i><?php echo htmlspecialchars($name); ?>
+<button id="userDropdown" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onKeyPress="handleKeyPress(event)" onKeyDown="handleKeyDown(event)" onKeyUp="handleKeyUp(event)">
+    User Dropdown
+</button>
+                    <i class="fas fa-user fa-fw"></i><?php echo htmlspecialchars($name); ?>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                     <a class="dropdown-item" href="logout.php">Logout</a>
@@ -261,7 +264,7 @@ try {
                                 <div class="chart-title">Comparison of Registered Users, Products, and Sales</div>
                                 <canvas id="comparisonChart"></canvas>
                                 <button id="downloadBtn" class="download-btn">
-                                    Generate Report 
+                                    Generate Report
                                     <i class="fas fa-file-pdf"></i>
                                 </button>
                             </div>

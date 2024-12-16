@@ -139,7 +139,9 @@ try {
         <!-- Navbar-->
         <ul class="navbar-nav ml-auto ml-md-0">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button id="userDropdown" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onKeyPress="handleKeyPress(event)" onKeyDown="handleKeyDown(event)" onKeyUp="handleKeyUp(event)">
+    User Dropdown
+</button>
                     <i class="fas fa-user fa-fw"></i><?php echo htmlspecialchars($nombre) ?>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">

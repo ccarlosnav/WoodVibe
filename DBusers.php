@@ -1,7 +1,7 @@
 <?php
 session_start();
-require 'funcs/conexion.php'; // Archivo de conexión PDO
-require 'funcs/funcs.php'; // Archivo de funciones utilitarias
+require_once 'funcs/conexion.php'; // Archivo de conexión PDO
+require_once 'funcs/funcs.php'; // Archivo de funciones utilitarias
 
 if (!isset($_SESSION['id_usuario'])) {
     header("Location: index.php");
@@ -245,7 +245,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- Navbar-->
         <ul class="navbar-nav ml-auto ml-md-0">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button id="userDropdown" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onKeyPress="handleKeyPress(event)" onKeyDown="handleKeyDown(event)" onKeyUp="handleKeyUp(event)">
+    User Dropdown
+</button>
                     <i class="fas fa-user fa-fw"></i><?php echo htmlspecialchars($nombre) ?>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
@@ -354,8 +356,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+    <dialog id="editModal" aria-labelledby="editModalLabel" aria-hidden="true">
+</dialog>
+<div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editModalLabel">Edit User</h5>
