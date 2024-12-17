@@ -1,8 +1,8 @@
 
 <?php
 session_start(); // Inicia la sesión
-require 'funcs/conexion.php'; // Archivo que maneja la conexión a la base de datos usando PDO
-require 'funcs/funcs.php'; // Archivo que contiene funciones utilitarias
+require_once 'funcs/conexion.php'; // Archivo que maneja la conexión a la base de datos usando PDO
+require_once 'funcs/funcs.php'; // Archivo que contiene funciones utilitarias
 
 // Verifica si el usuario ha iniciado sesión, de lo contrario, redirige al inicio de sesión
 if (!isset($_SESSION['id_usuario'])) {

@@ -1,7 +1,7 @@
 <?php
 // Incluye los archivos necesarios
-require 'funcs/conexion.php';
-require 'funcs/funcs.php';
+require_once 'funcs/conexion.php';
+require_once 'funcs/funcs.php';
 
 function redirectWithError($message)
 {

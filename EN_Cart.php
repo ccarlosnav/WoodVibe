@@ -359,7 +359,7 @@ try {
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <ul class="nav nav-pills">
-                            <li role="presentation" class="active"><a href="EN_Cart.php">Cart</a></li>
+                        <li class="active"><a href="EN_Cart.php">Cart</a></li>
                         </ul>
                     </div>
                     <div class="panel-body">

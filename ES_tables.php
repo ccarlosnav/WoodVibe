@@ -1,7 +1,7 @@
 <?php
 session_start();
-require 'funcs/conexion.php'; // Archivo de conexión PDO
-require 'funcs/funcs.php'; // Archivo con funciones útiles
+require_once 'funcs/conexion.php'; // Archivo de conexión PDO
+require_once 'funcs/funcs.php'; // Archivo con funciones útiles
 
 if (!isset($_SESSION['id_usuario'])) {
     header("Location: index.php");

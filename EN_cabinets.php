@@ -1,7 +1,7 @@
 <?php
 session_start();
-require 'funcs/conexion.php';
-require 'funcs/funcs.php';
+require_once 'funcs/conexion.php';
+require_once 'funcs/funcs.php';
 
 // Database connection using PDO
 try {
@@ -12,8 +12,8 @@ try {
 }
 
 // SQL query to get cabinet products
-$sql = "SELECT p.* FROM mis_productos p 
-        INNER JOIN categorias c ON p.categoria_id = c.id 
+$sql = "SELECT p.* FROM mis_productos p
+        INNER JOIN categorias c ON p.categoria_id = c.id
         WHERE c.nombre = 'Cabinets'";
 $stmt = $conn->prepare($sql);
 $stmt->execute();

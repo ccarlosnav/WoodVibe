@@ -1,7 +1,7 @@
 <?php
 session_start();
-require 'funcs/conexion.php';
-require 'funcs/funcs.php';
+require_once 'funcs/conexion.php';
+require_once 'funcs/funcs.php';
 
 // Conexión a la base de datos usando PDO
 try {
@@ -12,8 +12,8 @@ try {
 }
 
 // Consulta SQL para obtener los productos de wall Cabinets
-$sql = "SELECT p.* FROM mis_productos p 
-        INNER JOIN categorias c ON p.categoria_id = c.id 
+$sql = "SELECT p.* FROM mis_productos p
+        INNER JOIN categorias c ON p.categoria_id = c.id
         WHERE c.nombre = 'Wall Cabinets'";
 $stmt = $conn->prepare($sql);
 $stmt->execute();

@@ -1,6 +1,6 @@
 <?php
-require 'funcs/conexion.php';
-require 'funcs/funcs.php';
+require_once 'funcs/conexion.php';
+require_once 'funcs/funcs.php';
 
 $user_id = $_POST['user_id'] ?? null;
 $token = $_POST['token'] ?? null;
