@@ -31,10 +31,11 @@ try {
     die("No hay conexión con la base de datos: " . $e->getMessage());
 }
 
-function log_message($message)
+function logMessage($message)
 {
     file_put_contents('log.txt', date('Y-m-d H:i:s') . " - " . $message . PHP_EOL, FILE_APPEND);
 }
+
 
 try {
     if (isset($_REQUEST['action']) && !empty($_REQUEST['action'])) {
@@ -205,4 +206,3 @@ if ($_REQUEST['action'] == 'logout') {
     session_destroy();
     header("Location: index.php");
 }
-?>

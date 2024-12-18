@@ -41,8 +41,8 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Consulta SQL para obtener los productos en español junto con el nombre de la categoría
-    $sql = "SELECT p.id, p.nombre_es AS name, p.descripcion_es AS description, p.price, p.stock, c.nombre AS categoria, p.image 
-            FROM mis_productos p 
+    $sql = "SELECT p.id, p.nombre_es AS name, p.descripcion_es AS description, p.price, p.stock, c.nombre AS categoria, p.image
+            FROM mis_productos p
             JOIN categorias c ON p.categoria_id = c.id";
     $result = $pdo->query($sql);
 

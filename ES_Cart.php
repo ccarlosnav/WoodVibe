@@ -52,7 +52,7 @@ try {
                 'price' => $item['precio'],
                 'qty' => $qty,
                 'image' => $product['image']
-            );            
+            );
             $cart->insert($itemData);
         } else {
             $itemsOutOfStock[] = $item['nombre_producto'];
@@ -369,7 +369,7 @@ try {
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <ul class="nav nav-pills">
-                            <li role="presentation" class="active"><a href="ES_Cart.php">Carrito</a></li>
+                        <li class="active"><a href="ES_Cart.php">Carrito</a></li>
                         </ul>
                     </div>
                     <div class="panel-body">

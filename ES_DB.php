@@ -262,7 +262,7 @@ try {
                                 <div class="chart-title">Comparación de Usuarios Registrados, Productos y Ventas</div>
                                 <canvas id="comparisonChart"></canvas>
                                 <button id="downloadBtn" class="download-btn">
-                                    Generar Reporte 
+                                    Generar Reporte
                                     <i class="fas fa-file-pdf"></i>
                                 </button>
                             </div>
