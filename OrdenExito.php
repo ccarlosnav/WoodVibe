@@ -120,7 +120,7 @@ pg_close($conn);
         <div class="panel panel-default">
             <div class="panel-heading">
                 <ul class="nav nav-pills">
-                    <li role="presentation" class="active"><a href="#" id="backToStore">Back to the store</a></li>
+                <li class="active"><img src="image.jpg" alt="Description of the image" /></li>
                 </ul>
             </div>
             <div class="panel-body">

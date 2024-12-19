@@ -73,7 +73,7 @@ if (!verificaTokenPass($id, $token)) {
                                     <div class="small"><a href="ES_registro.php">¿Necesita una cuenta? Regístrese</a></div>
                                 </div>
                             </div>
-                        </div>  
+                        </div>
                     </div>
                 </div>
             </main>

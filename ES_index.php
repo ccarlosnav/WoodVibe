@@ -1,5 +1,5 @@
 <?php
-include 'Configuracion.php';
+include_once 'Configuracion.php';
 ?>
 
 <!DOCTYPE html>

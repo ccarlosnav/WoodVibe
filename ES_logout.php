@@ -38,4 +38,3 @@ function saveCartToDatabase($db, $cart, $id_usuario) {
         $stmt->execute();
     }
 }
-?>

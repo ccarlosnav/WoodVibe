@@ -1,6 +1,6 @@
 <?php
-require 'funcs/conexion.php';
-require 'funcs/funcs.php';
+require_once 'funcs/conexion.php';
+require_once 'funcs/funcs.php';
 
 $errors = array();
 $emailExists = false;
@@ -42,9 +42,11 @@ if (!empty($_POST)) {
         $errors[] = "The email $email already exists";
     }
 
-    if (count($errors) == 0) {
+    if (empty($errors)) {
         $pass_hash = hashPassword($password);
         $token = generateToken();
+    
+    
 
         try {
             $pdo->beginTransaction();

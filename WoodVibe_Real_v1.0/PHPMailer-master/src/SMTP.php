@@ -117,7 +117,7 @@ class SMTP
      *
      * @var int
      */
-    public $do_debug = self::DEBUG_OFF;
+    public $dodebug = self::DEBUG_OFF;
 
     /**
      * How to handle debug output.
@@ -140,7 +140,7 @@ class SMTP
      *
      * @var string|callable|\Psr\Log\LoggerInterface
      */
-    public $Debugoutput = 'echo';
+    public $debugoutput = 'echo';
 
     /**
      * Whether to use VERP.
@@ -150,7 +150,7 @@ class SMTP
      *
      * @var bool
      */
-    public $do_verp = false;
+    public $doverp = false;
 
     /**
      * The timeout value for connection, in seconds.
@@ -161,7 +161,7 @@ class SMTP
      *
      * @var int
      */
-    public $Timeout = 300;
+    public $timeout = 300;
 
     /**
      * How long to wait for commands to complete, in seconds.
@@ -169,7 +169,7 @@ class SMTP
      *
      * @var int
      */
-    public $Timelimit = 300;
+    public $timelimit = 300;
 
     /**
      * Patterns to extract an SMTP transaction id from reply to a DATA command.
@@ -178,7 +178,7 @@ class SMTP
      *
      * @var string[]
      */
-    protected $smtp_transaction_id_patterns = [
+    protected $smtptransactionidpatterns = [
         'exim' => '/[\d]{3} OK id=(.*)/',
         'sendmail' => '/[\d]{3} 2.0.0 (.*) Message/',
         'postfix' => '/[\d]{3} 2.0.0 Ok: queued as (.*)/',
@@ -194,14 +194,14 @@ class SMTP
      *
      * @var string|bool|null
      */
-    protected $last_smtp_transaction_id;
+    protected $lastsmtptransactionid;
 
     /**
      * The socket for the server connection.
      *
      * @var ?resource
      */
-    protected $smtp_conn;
+    protected $smtpconn;
 
     /**
      * Error information, if any, for the last SMTP command.
@@ -221,7 +221,7 @@ class SMTP
      *
      * @var string|null
      */
-    protected $helo_rply;
+    protected $helorply;
 
     /**
      * The set of SMTP extensions sent in reply to EHLO command.
@@ -233,14 +233,14 @@ class SMTP
      *
      * @var array|null
      */
-    protected $server_caps;
+    protected $servercaps;
 
     /**
      * The most recent reply received from the server.
      *
      * @var string
      */
-    protected $last_reply = '';
+    protected $lastreply = '';
 
     /**
      * Output debugging info via a user-selected method.
@@ -490,7 +490,7 @@ class SMTP
         $username,
         $password,
         $authtype = null,
-        $OAuth = null
+        $oauth = null
     ) {
         if (!$this->server_caps) {
             $this->setError('Authentication is not allowed before HELO/EHLO');
@@ -1106,7 +1106,7 @@ class SMTP
      *
      * @return int|bool The number of bytes sent to the server or false on error
      */
-    public function client_send($data, $command = '')
+    public function clientsend($data, $command = '')
     {
         //If SMTP transcripts are left enabled, or debug output is posted online
         //it can leak credentials, so hide credentials in all but lowest level
@@ -1204,7 +1204,7 @@ class SMTP
      *
      * @return string
      */
-    protected function get_lines()
+    protected function getlines()
     {
         //If the connection is bad, give up straight away
         if (!is_resource($this->smtp_conn)) {

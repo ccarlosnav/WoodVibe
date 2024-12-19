@@ -110,8 +110,8 @@ pg_close($conn);
         <div class="panel panel-default">
             <div class="panel-heading">
                 <ul class="nav nav-pills">
-                    <li role="presentation" class="active">
-                        <a href="#" id="backToStoreButton">Volver a la tienda</a>
+                <li class="active"><img src="image.jpg" alt="" /></li>
+                <a href="#" id="backToStoreButton">Volver a la tienda</a>
                     </li>
                 </ul>
             </div>

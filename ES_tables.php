@@ -21,7 +21,7 @@ try {
     if ($tipo_usuario == 1) {
         $sql = "SELECT id, usuario, correo, nombre, id_tipo FROM usuarios";
         $stmt = $conn->prepare($sql);
-    } else if ($tipo_usuario == 2) {
+    } elseif ($tipo_usuario == 2) {
         $sql = "SELECT id, usuario, correo, nombre, id_tipo FROM usuarios WHERE id = :id";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -99,4 +99,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
-?>

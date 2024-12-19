@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require 'La-carta.php';
+require_once 'La-carta.php';
 $cart = new Cart;
 $product_price = $cart->total(); // Precio total del carrito
 $error = "";
@@ -238,7 +238,7 @@ $total = $subtotal + $taxAmount;
                     <th>Precio</th>
                     <th>Total</th>
                   </tr>
-                </thead>  
+                </thead>
                 <tbody>
                   <?php
                   if ($cart->total_items() > 0) {

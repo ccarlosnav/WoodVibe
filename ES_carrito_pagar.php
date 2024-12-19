@@ -197,10 +197,10 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <ul class="nav nav-pills">
-                            <li role="presentation"><a href="ES_Cart.php">Cart</a></li>
-                            <li role="presentation" class="active"><a href="Pagos.php">Pagar</a></li>
+                        <li class="active"><a href="ES_Cart.php"><img src="cart-icon.jpg" alt="Cart" /></a></li>
+                        <li class="active"><a href="Pagos.php"><img src="pay-icon.jpg" alt="Pagar" /> Pagar</a></li>
                         </ul>
-                    </div>  
+                    </div> 
 
                     <div class="panel-body">
                         <h1>Vista previa del pedido</h1>

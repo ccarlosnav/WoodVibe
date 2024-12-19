@@ -1,11 +1,11 @@
 <?php session_start();
 class Cart {
-    protected $cart_contents = array();
+    protected $cartContents = array();
     
     public function __construct(){
         // get the shopping cart array from the session
-        $this->cart_contents = !empty($_SESSION['cart_contents'])?$_SESSION['cart_contents']:NULL;
-        if ($this->cart_contents === NULL){
+        $this->cart_contents = !empty($_SESSION['cart_contents'])?$_SESSION['cart_contents']:null;
+        if ($this->cart_contents === null){
             // set some base values
             $this->cart_contents = array('cart_total' => 0, 'total_items' => 0);
         }
@@ -24,7 +24,7 @@ class Cart {
         unset($cart['total_items']);
         unset($cart['cart_total']);
 
-        return $cart; 
+        return $cart;
     }
     
     /**
@@ -32,9 +32,9 @@ class Cart {
      * @param    string    $row_id
      * @return    array
      */
-    public function get_item($row_id){
-        return (in_array($row_id, array('total_items', 'cart_total'), TRUE) OR ! isset($this->cart_contents[$row_id]))
-            ? FALSE
+    public function GetItem($row_id){
+        return (in_array($row_id, array('total_items', 'cart_total'), true) || ! isset($this->cart_contents[$row_id]))
+            ? false
             : $this->cart_contents[$row_id];
     }
     
@@ -42,7 +42,7 @@ class Cart {
      * Total Items: Returns the total item count
      * @return    int
      */
-    public function total_items(){
+    public function TotalItems(){
         return $this->cart_contents['total_items'];
     }
     
@@ -60,11 +60,11 @@ class Cart {
      * @return    bool
      */
     public function insert($item = array()){
-        if(!is_array($item) OR count($item) === 0){
-            return FALSE;
+        if(!is_array($item) or count($item) === 0){
+            return false;
         }else{
             if(!isset($item['id'], $item['name'], $item['price'], $item['qty'])){
-                return FALSE;
+                return false;
             }else{
                 /*
                  * Insert Item
@@ -72,7 +72,7 @@ class Cart {
                 // prep the quantity
                 $item['qty'] = (float) $item['qty'];
                 if($item['qty'] == 0){
-                    return FALSE;
+                    return false;
                 }
                 // prep the price
                 $item['price'] = (float) $item['price'];
@@ -87,9 +87,9 @@ class Cart {
                 
                 // save Cart Item
                 if($this->save_cart()){
-                    return isset($rowid) ? $rowid : TRUE;
+                    return isset($rowid) ? $rowid : true;
                 }else{
-                    return FALSE;
+                    return false;
                 }
             }
         }
@@ -101,11 +101,11 @@ class Cart {
      * @return    bool
      */
     public function update($item = array()){
-        if (!is_array($item) OR count($item) === 0){
-            return FALSE;
+        if (empty($item)) {
+        }            return false;
         }else{
             if (!isset($item['rowid'], $this->cart_contents[$item['rowid']])){
-                return FALSE;
+                return false;
             }else{
                 // prep the quantity
                 if(isset($item['qty'])){
@@ -113,7 +113,7 @@ class Cart {
                     // remove the item from the cart, if quantity is zero
                     if ($item['qty'] == 0){
                         unset($this->cart_contents[$item['rowid']]);
-                        return TRUE;
+                        return true;
                     }
                 }
                 
@@ -129,7 +129,7 @@ class Cart {
                 }
                 // save cart data
                 $this->save_cart();
-                return TRUE;
+                return true;
             }
         }
     }
@@ -138,11 +138,11 @@ class Cart {
      * Save the cart array to the session
      * @return    bool
      */
-    protected function save_cart(){
+    protected function SaveCart(){
         $this->cart_contents['total_items'] = $this->cart_contents['cart_total'] = 0;
         foreach ($this->cart_contents as $key => $val){
             // make sure the array contains the proper indexes
-            if(!is_array($val) OR !isset($val['price'], $val['qty'])){
+            if(!is_array($val) || !isset($val['price'], $val['qty'])){
                 continue;
             }
      
@@ -154,10 +154,10 @@ class Cart {
         // if cart empty, delete it from the session
         if(count($this->cart_contents) <= 2){
             unset($_SESSION['cart_contents']);
-            return FALSE;
+            return false;
         }else{
             $_SESSION['cart_contents'] = $this->cart_contents;
-            return TRUE;
+            return true;
         }
     }
     
@@ -170,7 +170,7 @@ class Cart {
         // unset & save
         unset($this->cart_contents[$row_id]);
         $this->save_cart();
-        return TRUE;
+        return true;
      }
      
     /**

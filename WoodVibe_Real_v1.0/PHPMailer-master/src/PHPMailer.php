@@ -67,21 +67,21 @@ class PHPMailer
      *
      * @var int|null
      */
-    public $Priority;
+    public $priority;
 
     /**
      * The character set of the message.
      *
      * @var string
      */
-    public $CharSet = self::CHARSET_ISO88591;
+    public $charset = self::CHARSET_ISO88591;
 
     /**
      * The MIME Content-type of the message.
      *
      * @var string
      */
-    public $ContentType = self::CONTENT_TYPE_PLAINTEXT;
+    public $contenttype = self::CONTENT_TYPE_PLAINTEXT;
 
     /**
      * The message encoding.
@@ -89,28 +89,28 @@ class PHPMailer
      *
      * @var string
      */
-    public $Encoding = self::ENCODING_8BIT;
+    public $encoding = self::ENCODING_8BIT;
 
     /**
      * Holds the most recent mailer error message.
      *
      * @var string
      */
-    public $ErrorInfo = '';
+    public $errorinfo = '';
 
     /**
      * The From email address for the message.
      *
      * @var string
      */
-    public $From = 'root@localhost';
+    public $from = 'root@localhost';
 
     /**
      * The From name of the message.
      *
      * @var string
      */
-    public $FromName = 'Root User';
+    public $fromname = 'Root User';
 
     /**
      * The envelope sender of the message.
@@ -120,14 +120,14 @@ class PHPMailer
      *
      * @var string
      */
-    public $Sender = '';
+    public $sender = '';
 
     /**
      * The Subject of the message.
      *
      * @var string
      */
-    public $Subject = '';
+    public $subject = '';
 
     /**
      * An HTML or plain text message body.
@@ -135,7 +135,7 @@ class PHPMailer
      *
      * @var string
      */
-    public $Body = '';
+    public $body = '';
 
     /**
      * The plain-text message body.
@@ -145,7 +145,7 @@ class PHPMailer
      *
      * @var string
      */
-    public $AltBody = '';
+    public $altbody = '';
 
     /**
      * An iCal message part body.
@@ -157,14 +157,14 @@ class PHPMailer
      *
      * @var string
      */
-    public $Ical = '';
+    public $ical = '';
 
     /**
      * Value-array of "method" in Contenttype header "text/calendar"
      *
      * @var string[]
      */
-    protected static $IcalMethods = [
+    protected static $icalmethods = [
         self::ICAL_METHOD_REQUEST,
         self::ICAL_METHOD_PUBLISH,
         self::ICAL_METHOD_REPLY,
@@ -180,21 +180,21 @@ class PHPMailer
      *
      * @var string
      */
-    protected $MIMEBody = '';
+    protected $mimebody = '';
 
     /**
      * The complete compiled MIME message headers.
      *
      * @var string
      */
-    protected $MIMEHeader = '';
+    protected $mimeheader = '';
 
     /**
      * Extra headers that createHeader() doesn't fold in.
      *
      * @var string
      */
-    protected $mailHeader = '';
+    protected $mailheader = '';
 
     /**
      * Word-wrap the message body to this number of chars.
@@ -204,7 +204,7 @@ class PHPMailer
      *
      * @var int
      */
-    public $WordWrap = 0;
+    public $wordwrap = 0;
 
     /**
      * Which method to use to send mail.
@@ -212,14 +212,14 @@ class PHPMailer
      *
      * @var string
      */
-    public $Mailer = 'mail';
+    public $mailer = 'mail';
 
     /**
      * The path to the sendmail program.
      *
      * @var string
      */
-    public $Sendmail = '/usr/sbin/sendmail';
+    public $sendmail = '/usr/sbin/sendmail';
 
     /**
      * Whether mail() uses a fully sendmail-compatible MTA.
@@ -227,14 +227,14 @@ class PHPMailer
      *
      * @var bool
      */
-    public $UseSendmailOptions = true;
+    public $usesendmailoptions = true;
 
     /**
      * The email address that a reading confirmation should be sent to, also known as read receipt.
      *
      * @var string
      */
-    public $ConfirmReadingTo = '';
+    public $confirmreadingto = '';
 
     /**
      * The hostname to use in the Message-ID header and as default HELO string.
@@ -246,7 +246,7 @@ class PHPMailer
      *
      * @var string
      */
-    public $Hostname = '';
+    public $hostname = '';
 
     /**
      * An ID to be used in the Message-ID header.
@@ -258,7 +258,7 @@ class PHPMailer
      *
      * @var string
      */
-    public $MessageID = '';
+    public $messageid = '';
 
     /**
      * The message Date to be used in the Date header.
@@ -266,7 +266,7 @@ class PHPMailer
      *
      * @var string
      */
-    public $MessageDate = '';
+    public $messagedate = '';
 
     /**
      * SMTP hosts.
@@ -280,14 +280,14 @@ class PHPMailer
      *
      * @var string
      */
-    public $Host = 'localhost';
+    public $host = 'localhost';
 
     /**
      * The default SMTP server port.
      *
      * @var int
      */
-    public $Port = 25;
+    public $port = 25;
 
     /**
      * The SMTP HELO/EHLO name used for the SMTP connection.
@@ -298,7 +298,7 @@ class PHPMailer
      *
      * @var string
      */
-    public $Helo = '';
+    public $helo = '';
 
     /**
      * What kind of encryption to use on the SMTP connection.
@@ -306,7 +306,7 @@ class PHPMailer
      *
      * @var string
      */
-    public $SMTPSecure = '';
+    public $smtpsecure = '';
 
     /**
      * Whether to enable TLS encryption automatically if a server supports it,
@@ -315,7 +315,7 @@ class PHPMailer
      *
      * @var bool
      */
-    public $SMTPAutoTLS = true;
+    public $smtpautotls = true;
 
     /**
      * Whether to use SMTP authentication.
@@ -326,28 +326,28 @@ class PHPMailer
      *
      * @var bool
      */
-    public $SMTPAuth = false;
+    public $smtpauth = false;
 
     /**
      * Options array passed to stream_context_create when connecting via SMTP.
      *
      * @var array
      */
-    public $SMTPOptions = [];
+    public $smtpoptions = [];
 
     /**
      * SMTP username.
      *
      * @var string
      */
-    public $Username = '';
+    public $username = '';
 
     /**
      * SMTP password.
      *
      * @var string
      */
-    public $Password = '';
+    public $password = '';
 
     /**
      * SMTP auth type.
@@ -355,7 +355,7 @@ class PHPMailer
      *
      * @var string
      */
-    public $AuthType = '';
+    public $authtype = '';
 
     /**
      * An instance of the PHPMailer OAuth class.
@@ -370,7 +370,7 @@ class PHPMailer
      *
      * @var int
      */
-    public $Timeout = 300;
+    public $timeout = 300;
 
     /**
      * Comma separated list of DSN notifications
@@ -399,7 +399,7 @@ class PHPMailer
      *
      * @var int
      */
-    public $SMTPDebug = 0;
+    public $smtpdebug = 0;
 
     /**
      * How to handle debug output.
@@ -425,7 +425,7 @@ class PHPMailer
      *
      * @var string|callable|\Psr\Log\LoggerInterface
      */
-    public $Debugoutput = 'echo';
+    public $debugoutput = 'echo';
 
     /**
      * Whether to keep SMTP connection open after each message.
@@ -434,7 +434,7 @@ class PHPMailer
      *
      * @var bool
      */
-    public $SMTPKeepAlive = false;
+    public $smtpkeepalive = false;
 
     /**
      * Whether to split multiple to addresses into multiple messages
@@ -445,14 +445,14 @@ class PHPMailer
      *
      * @deprecated 6.0.0 PHPMailer isn't a mailing list manager!
      */
-    public $SingleTo = false;
+    public $singleto = false;
 
     /**
      * Storage for addresses when SingleTo is enabled.
      *
      * @var array
      */
-    protected $SingleToArray = [];
+    protected $singletoarray = [];
 
     /**
      * Whether to generate VERP addresses on send.
@@ -470,14 +470,14 @@ class PHPMailer
      *
      * @var bool
      */
-    public $AllowEmpty = false;
+    public $allowempty = false;
 
     /**
      * DKIM selector.
      *
      * @var string
      */
-    public $DKIM_selector = '';
+    public $dkimselector = '';
 
     /**
      * DKIM Identity.
@@ -485,7 +485,7 @@ class PHPMailer
      *
      * @var string
      */
-    public $DKIM_identity = '';
+    public $dkimidentity = '';
 
     /**
      * DKIM passphrase.
@@ -493,7 +493,7 @@ class PHPMailer
      *
      * @var string
      */
-    public $DKIM_passphrase = '';
+    public $dkimpassphrase = '';
 
     /**
      * DKIM signing domain name.
@@ -502,14 +502,14 @@ class PHPMailer
      *
      * @var string
      */
-    public $DKIM_domain = '';
+    public $dkimdomain = '';
 
     /**
      * DKIM Copy header field values for diagnostic use.
      *
      * @var bool
      */
-    public $DKIM_copyHeaderFields = true;
+    public $dkimcopyheaderfields = true;
 
     /**
      * DKIM Extra signing headers.
@@ -518,14 +518,14 @@ class PHPMailer
      *
      * @var array
      */
-    public $DKIM_extraHeaders = [];
+    public $dkimextraheaders = [];
 
     /**
      * DKIM private key file path.
      *
      * @var string
      */
-    public $DKIM_private = '';
+    public $dkimprivate = '';
 
     /**
      * DKIM private key string.
@@ -534,7 +534,7 @@ class PHPMailer
      *
      * @var string
      */
-    public $DKIM_private_string = '';
+    public $dkimprivatestring = '';
 
     /**
      * Callback Action function name.
@@ -557,7 +557,7 @@ class PHPMailer
      *
      * @var string
      */
-    public $action_function = '';
+    public $actionfunction = '';
 
     /**
      * What to put in the X-Mailer header.
@@ -565,7 +565,7 @@ class PHPMailer
      *
      * @var string|null
      */
-    public $XMailer = '';
+    public $xmailer = '';
 
     /**
      * Which validator to use by default when validating email addresses.
@@ -611,7 +611,7 @@ class PHPMailer
      *
      * @var array
      */
-    protected $ReplyTo = [];
+    protected $replyto = [];
 
     /**
      * An array of all kinds of addresses.
@@ -623,7 +623,7 @@ class PHPMailer
      *
      * @var array
      */
-    protected $all_recipients = [];
+    protected $allrecipients = [];
 
     /**
      * An array of names and addresses queued for validation.
@@ -638,7 +638,7 @@ class PHPMailer
      *
      * @var array
      */
-    protected $RecipientsQueue = [];
+    protected $recipientsqueue = [];
 
     /**
      * An array of reply-to names and addresses queued for validation.
@@ -649,7 +649,7 @@ class PHPMailer
      *
      * @var array
      */
-    protected $ReplyToQueue = [];
+    protected $replytoqueue = [];
 
     /**
      * The array of attachments.
@@ -663,21 +663,21 @@ class PHPMailer
      *
      * @var array
      */
-    protected $CustomHeader = [];
+    protected $customheader = [];
 
     /**
      * The most recent Message-ID (including angular brackets).
      *
      * @var string
      */
-    protected $lastMessageID = '';
+    protected $lastmessageid = '';
 
     /**
      * The message's MIME type.
      *
      * @var string
      */
-    protected $message_type = '';
+    protected $messagetype = '';
 
     /**
      * The array of MIME boundary strings.
@@ -698,28 +698,28 @@ class PHPMailer
      *
      * @var int
      */
-    protected $error_count = 0;
+    protected $errorcount = 0;
 
     /**
      * The S/MIME certificate file path.
      *
      * @var string
      */
-    protected $sign_cert_file = '';
+    protected $signcertfile = '';
 
     /**
      * The S/MIME key file path.
      *
      * @var string
      */
-    protected $sign_key_file = '';
+    protected $signkeyfile = '';
 
     /**
      * The optional S/MIME extra certificates ("CA Chain") file path.
      *
      * @var string
      */
-    protected $sign_extracerts_file = '';
+    protected $signextracertsfile = '';
 
     /**
      * The S/MIME password for the key.
@@ -727,7 +727,7 @@ class PHPMailer
      *
      * @var string
      */
-    protected $sign_key_pass = '';
+    protected $signkeypass = '';
 
     /**
      * Whether to throw exceptions for errors.
@@ -787,7 +787,7 @@ class PHPMailer
      *
      * @var string
      */
-    protected static $LE = self::CRLF;
+    protected static $le = self::CRLF;
 
     /**
      * The maximum line length supported by mail().
@@ -1640,7 +1640,7 @@ class PHPMailer
                     return $this->mailSend($this->MIMEHeader, $this->MIMEBody);
             }
         } catch (Exception $exc) {
-            if ($this->Mailer === 'smtp' && $this->SMTPKeepAlive == true) {
+            if ($this->Mailer === 'smtp' && $this->SMTPKeepAlive) {
                 $this->smtp->reset();
             }
             $this->setError($exc->getMessage());
@@ -1997,7 +1997,7 @@ class PHPMailer
         }
 
         //Create error message for any bad addresses
-        if (count($bad_rcpt) > 0) {
+        if (!empty($bad_rcpt)) {
             $errstr = '';
             foreach ($bad_rcpt as $bad) {
                 $errstr .= $bad['to'] . ': ' . $bad['error'];
@@ -2190,7 +2190,7 @@ class PHPMailer
         }
 
         //Define full set of translatable strings in English
-        $PHPMAILER_LANG = [
+        $phpmailerlang = [
             'authenticate' => 'SMTP Error: Could not authenticate.',
             'connect_host' => 'SMTP Error: Could not connect to SMTP host.',
             'data_not_accepted' => 'SMTP Error: data not accepted.',
@@ -2231,7 +2231,7 @@ class PHPMailer
             } else {
                 //Overwrite language-specific strings.
                 //This way we'll never have missing translation keys.
-                $foundlang = include $lang_file;
+                $foundlang = include_once $lang_file;
             }
         }
         $this->language = $PHPMAILER_LANG;
@@ -4224,7 +4224,7 @@ class PHPMailer
      *
      * @return string MIME type of file
      */
-    public static function _mime_types($ext = '')
+    public static function mimetypes($ext = '')
     {
         $mimes = [
             'xl' => 'application/excel',
@@ -4380,7 +4380,7 @@ class PHPMailer
      *
      * @return string|array
      */
-    public static function mb_pathinfo($path, $options = null)
+    public static function mbpathinfo($path, $options = null)
     {
         $ret = ['dirname' => '', 'basename' => '', 'extension' => '', 'filename' => ''];
         $pathinfo = [];
@@ -4534,7 +4534,7 @@ class PHPMailer
      *
      * @return string
      */
-    public function DKIM_QP($txt)
+    public function dkimqp($txt)
     {
         $line = '';
         $len = strlen($txt);
@@ -4559,7 +4559,7 @@ class PHPMailer
      *
      * @return string The DKIM signature value
      */
-    public function DKIM_Sign($signHeader)
+    public function dkimsign($signHeader)
     {
         if (!defined('PKCS7_TEXT')) {
             if ($this->exceptions) {
@@ -4601,7 +4601,7 @@ class PHPMailer
      *
      * @return string
      */
-    public function DKIM_HeaderC($signHeader)
+    public function dkimheaderc($signHeader)
     {
         //Normalize breaks to CRLF (regardless of the mailer)
         $signHeader = static::normalizeBreaks($signHeader, self::CRLF);
@@ -4645,7 +4645,7 @@ class PHPMailer
      *
      * @return string
      */
-    public function DKIM_BodyC($body)
+    public function dkimbodyc($body)
     {
         if (empty($body)) {
             return self::CRLF;
@@ -4668,12 +4668,12 @@ class PHPMailer
      *
      * @return string
      */
-    public function DKIM_Add($headers_line, $subject, $body)
+    public function dkimadd($headers_line, $subject, $body)
     {
-        $DKIMsignatureType = 'rsa-sha256'; //Signature & hash algorithms
-        $DKIMcanonicalization = 'relaxed/simple'; //Canonicalization methods of header & body
-        $DKIMquery = 'dns/txt'; //Query method
-        $DKIMtime = time();
+        $dkimsignaturetype = 'rsa-sha256'; //Signature & hash algorithms
+        $dkimcanonicalization = 'relaxed/simple'; //Canonicalization methods of header & body
+        $dkimquery = 'dns/txt'; //Query method
+        $dkimtime = time();
         //Always sign these headers without being asked
         //Recommended list from https://tools.ietf.org/html/rfc6376#section-5.4.1
         $autoSignHeaders = [
@@ -4748,7 +4748,7 @@ class PHPMailer
             }
         }
         $copiedHeaderFields = '';
-        if ($this->DKIM_copyHeaderFields && count($copiedHeaders) > 0) {
+        if ($this->DKIM_copyHeaderFields && !empty($copiedHeaders)) {
             //Assemble a DKIM 'z' tag
             $copiedHeaderFields = ' z=';
             $first = true;
@@ -4774,7 +4774,7 @@ class PHPMailer
         $headerValues = implode(static::$LE, $headersToSign);
         $body = $this->DKIM_BodyC($body);
         //Base64 of packed binary SHA-256 hash of body
-        $DKIMb64 = base64_encode(pack('H*', hash('sha256', $body)));
+        $dkimb64 = base64_encode(pack('H*', hash('sha256', $body)));
         $ident = '';
         if ('' !== $this->DKIM_identity) {
             $ident = ' i=' . $this->DKIM_identity . ';' . static::$LE;

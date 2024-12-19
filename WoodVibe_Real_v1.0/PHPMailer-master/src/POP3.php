@@ -72,7 +72,7 @@ class POP3
      *
      * @var int
      */
-    public $do_debug = self::DEBUG_OFF;
+    public $dodebug = self::DEBUG_OFF;
 
     /**
      * POP3 mail server hostname.
@@ -114,7 +114,7 @@ class POP3
      *
      * @var resource
      */
-    protected $pop_conn;
+    protected $popconn;
 
     /**
      * Are we connected?

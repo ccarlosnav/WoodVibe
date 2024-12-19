@@ -67,21 +67,21 @@ class PHPMailer
      *
      * @var int|null
      */
-    public $Priority;
+    public $priority;
 
     /**
      * The character set of the message.
      *
      * @var string
      */
-    public $CharSet = self::CHARSET_ISO88591;
+    public $charset = self::CHARSET_ISO88591;
 
     /**
      * The MIME Content-type of the message.
      *
      * @var string
      */
-    public $ContentType = self::CONTENT_TYPE_PLAINTEXT;
+    public $contenttype = self::CONTENT_TYPE_PLAINTEXT;
 
     /**
      * The message encoding.
@@ -89,28 +89,28 @@ class PHPMailer
      *
      * @var string
      */
-    public $Encoding = self::ENCODING_8BIT;
+    public $encoding = self::ENCODING_8BIT;
 
     /**
      * Holds the most recent mailer error message.
      *
      * @var string
      */
-    public $ErrorInfo = '';
+    public $errorinfo = '';
 
     /**
      * The From email address for the message.
      *
      * @var string
      */
-    public $From = 'root@localhost';
+    public $from = 'root@localhost';
 
     /**
      * The From name of the message.
      *
      * @var string
      */
-    public $FromName = 'Root User';
+    public $fromname = 'Root User';
 
     /**
      * The envelope sender of the message.
